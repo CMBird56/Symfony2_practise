@@ -28,16 +28,19 @@ class DefaultController extends Controller
         if ($form->isSubmitted()) {
             // perform some action, such as saving the task to the database
             $var = $form->get('task')->getData();
+            $var2 = $form->get('dueDate')->getData();
+            echo "<p>" . $var . "</p>" . "<br/>";
 
         }
 
-        if($form->isValid()) {
+        /*if($form->isValid()) {
             return $this->redirectToRoute('task_success');
-        }
+        }*/
 
         return $this->render('default/new.html.twig', array(
             'form' => $form->createView(),
         ));
+
     }
 
 
